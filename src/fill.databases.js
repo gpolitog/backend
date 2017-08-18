@@ -1,7 +1,7 @@
 function loadDatabases(app) {
   const switches = app.service('/switches');
   const users = app.service('/users');
-
+  
   console.log('\nClear databases.');
   Promise.all([
     switches.remove(null),
@@ -19,13 +19,13 @@ function loadDatabases(app) {
         //console.log('switches'),
         switches.create({ name: 'Living Room', doctype: 'switch', type: 'virtual', categories: ['favorites'] }),
         switches.create({ name: 'Dining Room', doctype: 'switch', type: 'physical', categories: ['favorites'] })
-      ]);
+        ])
     })
 
     .then(() => {
       console.log('\nDatabases loaded.');
-    });
+    })
 }
 
 
-module.exports = loadDatabases;
+module.exports = loadDatabases
