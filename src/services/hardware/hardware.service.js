@@ -1,8 +1,8 @@
-// Initializes the `core` service on path `/core`
+// Initializes the `hardware` service on path `/hardware`
 const createService = require('feathers-nedb');
-const createModel = require('../../models/core.model');
-const hooks = require('./core.hooks');
-const filters = require('./core.filters');
+const createModel = require('../../models/hardware.model');
+const hooks = require('./hardware.hooks');
+const filters = require('./hardware.filters');
 
 module.exports = function () {
   const app = this;
@@ -10,16 +10,16 @@ module.exports = function () {
   const paginate = app.get('paginate');
 
   const options = {
-    name: 'core',
+    name: 'hardware',
     Model,
     paginate
   };
 
   // Initialize our service with any options it requires
-  app.use('/core', createService(options));
+  app.use('/hardware', createService(options));
 
   // Get our initialized service so that we can register hooks and filters
-  const service = app.service('core');
+  const service = app.service('hardware');
 
   service.hooks(hooks);
 
