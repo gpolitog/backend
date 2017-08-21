@@ -1,0 +1,7 @@
+{"name":"Acceleraometer","doctype":"type","_id":"481UXHzJAOzWdCKE"}
+{"name":"Switch Board #1","doctype":"device","type":"MCP20017","desc":"Upper Right","address":"0x24","ipinA":"10","ipinB":"11","_id":"LkUTfOAYC2wc1E11"}
+{"name":"MCP20017","doctype":"type","_id":"WjdKS1Vtut415QI6"}
+{"name":"MCP20008","doctype":"type","_id":"clU2WGpnPYsVmtAf"}
+{"name":"Relay 1","doctype":"device","_id":"jTcLVqqHvdlvpUd2"}
+{"name":"Switch Board #1","doctype":"device","type":"MCP20008","desc":"Upper Right","address":"0x24","ipinA":"10","ipinB":"11","_id":"LkUTfOAYC2wc1E11"}
+{"name":"Relay 1","doctype":"device","type":"MCP20017","_id":"jTcLVqqHvdlvpUd2"}
