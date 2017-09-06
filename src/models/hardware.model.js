@@ -1,12 +1,15 @@
 const NeDB = require('nedb');
 const path = require('path');
+const schemas = require('../schemas/hardware.schemas.js');
 
 module.exports = function (app) {
   const dbPath = app.get('nedb');
-  const Model = new NeDB({
+  const db = new NeDB({
     filename: path.join(dbPath, 'hardware.db'),
     autoload: true
   });
 
-  return Model;
+  db.schemas = schemas;
+
+  return db;
 };

@@ -3,6 +3,7 @@ const createService = require('feathers-nedb');
 const createModel = require('../../models/hardware.model');
 const hooks = require('./hardware.hooks');
 const filters = require('./hardware.filters');
+// const schemas = require('../../schemas/hardware.schemas.js');
 
 module.exports = function () {
   const app = this;
@@ -12,7 +13,7 @@ module.exports = function () {
   const options = {
     name: 'hardware',
     Model,
-    paginate
+    paginate,
   };
 
   // Initialize our service with any options it requires
@@ -26,4 +27,17 @@ module.exports = function () {
   if (service.filter) {
     service.filter(filters);
   }
+
+  // let defaults = {};
+  // for (let property of schemas['device'].properties) {
+  //   let propDefault = property[Object.getOwnPropertySymbols(property)[1]];
+  //   let pDefault =  propDefault.default ? propDefault.default : new propDefault.type('2342304955');
+  //   defaults[property.key] = pDefault;
+  // }
+  //
+  // service.docTypes = {};
+  // service.docTypes['device'] = {};
+  // service.docTypes['device'].defaults = defaults;
+  // console.log(service);
+  // console.log(service.docTypes['device'].defaults);
 };

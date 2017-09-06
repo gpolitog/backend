@@ -1,11 +1,14 @@
-// const { authenticate } = require('feathers-authentication').hooks;
+//const { authenticate } = require('feathers-authentication').hooks;
+// const  device = require('../../schemas/hardware.schemas.js').Device.hooks;
+const  test = require('../../hooks/test.js');
+
 
 module.exports = {
   before: {
     // all: [ authenticate('jwt') ],
     find: [],
     get: [],
-    create: [],
+    create: [ test('an option') ],
     update: [],
     patch: [],
     remove: []
