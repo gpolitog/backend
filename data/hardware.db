@@ -1,9 +1,2 @@
-{"name":"device4","doctype":"device","desc":"forced description","type":"pick a type","_id":"4xMH9ekjrzIBTQG0"}
-{"name":"really another service","doctype":"device","desc":"forced description","type":"pick a type","_id":"AKjogEljxk1eBBRq"}
-{"name":"test","doctype":"type","_id":"DWCrEv5bPQc1VxHP"}
-{"name":"device10","doctype":"device","type":{},"desc":"a device description","_id":"DvXhyfXQDwdYER80"}
-{"name":"a new device","doctype":"device","desc":"forced description","_id":"atvpoI6XDFGOyDbj"}
-{"name":"MCP20008","doctype":"type","_id":"clU2WGpnPYsVmtAf"}
-{"name":"yet another device","doctype":"device","desc":"forced description","type":"pick a type","_id":"ev1NzXSotewDXMW7"}
-{"name":"some more device","doctype":"device","desc":"forced description","type":"pick a type","_id":"kw67EyxAFPSZTtHN"}
-{"name":"device3","doctype":"device","desc":"forced description","type":"pick a type","_id":"rCPVOtbVRAwscHEZ"}
+{"name":"test","type":"mcp17","_id":"nO2xp5COWQ5iwZyS"}
+{"name":"test2","type":"mcp17","_id":"gMuwQ74sayl6Dpgx"}
