@@ -2,6 +2,7 @@
 // const  device = require('../../schemas/hardware.schemas.js').Device.hooks;
 // const  test = require('../../hooks/test.js');
 const  getschemas = require('../../hooks/getschemas.js');
+const  init = require('../../hooks/init.js');
 
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
     // all: [ authenticate('jwt') ],
     find: [],
     get: [getschemas()],
-    //    create: [ test('an option') ],
+    create: [ init('an option') ],
     update: [],
     patch: [],
     remove: []

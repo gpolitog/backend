@@ -28,16 +28,4 @@ module.exports = function () {
     service.filter(filters);
   }
 
-  // let defaults = {};
-  // for (let property of schemas['device'].properties) {
-  //   let propDefault = property[Object.getOwnPropertySymbols(property)[1]];
-  //   let pDefault =  propDefault.default ? propDefault.default : new propDefault.type('2342304955');
-  //   defaults[property.key] = pDefault;
-  // }
-  //
-  // service.docTypes = {};
-  // service.docTypes['device'] = {};
-  // service.docTypes['device'].defaults = defaults;
-  // console.log(service);
-  // console.log(service.docTypes['device'].defaults);
 };

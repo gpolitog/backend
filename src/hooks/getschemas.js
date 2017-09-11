@@ -8,6 +8,7 @@ module.exports = function () {
     // console.log('hook-type',hook.type);
     // console.log('hook-id',hook.id);
     if (hook.id === 'schemas') {
+      // setting hook result will send schemas to client
       hook.result = hook.service.Model.schemas;
     }
 
