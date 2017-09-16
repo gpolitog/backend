@@ -20,7 +20,7 @@ module.exports = function (options) {
     for (let skey in settings) {
       console.log(skey);
       if (!data[skey]) {
-        data.settings[skey] =  settings[skey].default ? settings[skey].default : new settings[skey].type;
+        data.settings[skey] =  settings[skey].default ? settings[skey].default : settings[skey].type(0)
       }
     }
     console.log(hook.data);
