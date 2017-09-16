@@ -1,9 +1,2 @@
-{"name":"test 7","type":"mcp17","i2cAddress":{},"defaultConfig":"output","iPinA":{},"iPinB":{},"desc":"enter a description","settings":{},"_id":"3TTtnxRev2hh1wrf"}
-{"name":"test 10","type":"mcp17","desc":"enter a description","settings":{},"i2cAddress":{},"defaultConfig":"output","iPinA":{},"iPinB":{},"_id":"G3UodskHYl0AU6PL"}
-{"name":"test6","type":"mcp17","desc":"enter a description","settings":{},"_id":"ZFEAqKiw15kpERVb"}
-{"name":"test5","type":"mcp17","desc":"put a description here","_id":"eYaMkJobcSQCzV5M"}
-{"name":"10test","type":"mcp08","desc":"enter a description","settings":{"i2cAddress":{},"defaultConfig":"output","iPin":{}},"_id":"k8VlrK3XD2clMLlp"}
-{"$$deleted":true,"_id":"eYaMkJobcSQCzV5M"}
-{"$$deleted":true,"_id":"ZFEAqKiw15kpERVb"}
-{"$$deleted":true,"_id":"3TTtnxRev2hh1wrf"}
-{"$$deleted":true,"_id":"G3UodskHYl0AU6PL"}
+{"name":"Relay Bank","type":"mcp17","desc":"16 switUpper left on board","settings":{"i2cAddress":"0x24","defaultConfig":"option","iPinA":"18","iPinB":"10"},"_id":"oBuTy4Jdm9vZD3br"}
+{"name":"Relay Bank","type":"mcp17","desc":"16 switUpper left on board","settings":{"i2cAddress":"0x24","defaultConfig":"custom","iPinA":"18","iPinB":"10"},"_id":"oBuTy4Jdm9vZD3br"}

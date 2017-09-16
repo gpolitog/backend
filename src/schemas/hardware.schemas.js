@@ -13,13 +13,18 @@ deviceTypes.mcp17 = {
   label: 'I2C MCP 20017 chip',
   settings : {
   // bus address either hex or equivalent decimal
-    i2cAddress : { type: Number, required: true, unique: true, fieldType: 'input', label: 'I2C Address', help: 'enter hex address' },
-    // chip type 08 or 17
-    // type: { type: Number, required: true, default: 17, valids:['08','17'], label: 'chip', help: 'choose an mcp chip type'},
-    // output, toggle, momentary, input - only toggle and momentary need interrupt pins
-    defaultConfig: { type: String, required: true, default: 'output', fieldType: 'select', valids: ['toggle','momentary','input','output','custom'], label: 'pins mode', help: 'choose a mode for all pins on chip' },
-    iPinA : { type: Number, label: 'SBC Pin Number' },
-    iPinB : { type: Number, label: 'SBC Pin Number' }
+    i2cAddress : { type: Number, required: true, unique: true,
+      fieldProps: { label: 'I2C Address', tip: 'enter hex address' } },
+    defaultConfig: { type: String, required: true, default: 'output', fieldType: 'select',
+      valid: ['toggle','momentary','input','output','custom'],
+      fieldProps: {
+        options: [{ label: 'toggle', value: 'toggle'},{ label: 'input', value: 'input'},{ label: 'output', value: 'output'},{ label: 'custom', value: 'custom'}],
+        label: 'pins mode',
+        tip: 'choose a mode for all pins on chip' } },
+    iPinA : { type: Number,
+      fieldProps: { label: 'SBC Pin Number - Port A' } },
+    iPinB : { type: Number,
+      fieldProps: { label: 'SBC Pin Number - Port B' } }
   }
 };
 
