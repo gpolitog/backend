@@ -8,36 +8,35 @@ const device = {
 //device types
 const deviceTypes = {};
 
-deviceTypes.mcp17 = {
-  name: 'mcp17',
-  label: 'I2C MCP 20017 chip',
-  settings : {
-  // bus address either hex or equivalent decimal
+deviceTypes.sw16 = {
+  category: 'switch',
+  label: '16 Switch Board',
+  desc: 'MCP 20017 Chip on Control Anything DIO board with interrupts',
+  pins: 16,
+  settings: {
     i2cAddress : { type: Number, required: true, unique: true,
-      fieldProps: { label: 'I2C Address', tip: 'enter hex address' } },
-    defaultConfig: { type: String, required: true, default: 'output', fieldType: 'select',
-      valid: ['toggle','momentary','input','output','custom'],
-      fieldProps: {
-        options: [{ label: 'toggle', value: 'toggle'},{ label: 'input', value: 'input'},{ label: 'output', value: 'output'},{ label: 'custom', value: 'custom'}],
-        label: 'pins mode',
-        tip: 'choose a mode for all pins on chip' } },
-    iPinA : { type: Number,
-      fieldProps: { label: 'SBC Pin Number - Port A' } },
-    iPinB : { type: Number,
-      fieldProps: { label: 'SBC Pin Number - Port B' } }
+      fieldProps: { label: 'I2C Address', tip: 'enter address as decimal or hex - unique for IC2 bus' } },
+    pinsConfig: { type: String, required: true, default: 'toggle',  fieldType: 'hidden' }, 
+    iPinA: { type: Number,
+      fieldProps: { label: 'SBC Pin Port A', tip: 'Pin Number on SBC(RPIi) connected to Port A Interrupt' } },
+    iPinB: { type: Number,
+      fieldProps: { label: 'SBC Pin Port B', tip: 'Pin Number on SBC(RPIi) connected to Port B Interrupt' } }
   }
 };
 
-deviceTypes.mcp08 = {
-  name: 'mcp08',
-  label: 'I2C MCP 20008 chip',
-  settings : {
-  // bus address either hex or equivalent decimal
-    i2cAddress : { type: Number, required: true, unique: true, label: 'I2C Address', help: 'enter hex address' },
-    // output, toggle, momentary, input - only toggle and momentary need interrupt pins
-    defaultConfig: { type: String, required: true, default: 'output', valids: ['toggle','momentary','input','output'], label: 'pins mode', help: 'choose a mode for all pins on chip' },
-    iPin : { type: Number, label: 'SBC Pin Number' },
+deviceTypes.ry16 = {
+  category: 'relay',
+  label: '16 Relay Board',
+  desc: 'MCP 20017 Chip on Control Anything Relay board ',
+  pins: 16,
+  settings: {
+    i2cAddress : { type: Number, required: true, unique: true,
+      fieldProps: { label: 'I2C Address', tip: 'enter address as decimal or hex - unique for IC2 bus' } 
+    },
+    pinsConfig: { type: String, required: true, default: 'output',  fieldType: 'hidden' }
   }
 };
+
+
 
 module.exports = { device, deviceTypes };

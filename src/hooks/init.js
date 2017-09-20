@@ -13,13 +13,16 @@ module.exports = function (options) {
     for (let key in device) {
       console.log(key);
       if (!data[key]) {
+// need to fix making a new non-null instance from type
         data[key] =  device[key].default ? device[key].default : new device[key].type;
       }
     }
+    data.category =  deviceTypes[data.type].category
     const settings = deviceTypes[data.type].settings;
     for (let skey in settings) {
       console.log(skey);
       if (!data[skey]) {
+// need to fix making a new non-null instance from type
         data.settings[skey] =  settings[skey].default ? settings[skey].default : settings[skey].type(0)
       }
     }
