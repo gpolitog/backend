@@ -1,2 +1,3 @@
-{"name":"Living Room","doctype":"switch","type":"virtual","categories":["favorites"],"_id":"5KqaJ1BeaTujImxe"}
-{"name":"Dining Room","doctype":"switch","type":"physical","categories":["favorites"],"_id":"XZtaca23wZL6qXmk"}
+{"name":"V test","type":"virtual","desc":"All outside lights","circuits":["jCZqXbM23JHRHK0Y"],"on":false,"_id":"CXb249e3e8Ed3JhE"}
+{"name":"P another switch","type":"physical","desc":"","location":"1","bankid":"","port":"A","pin":1,"circuits":[],"on":false,"_id":"QB4BYKODhmmwBxZ4"}
+{"name":"P test","type":"physical","desc":"just a test physical switch","location":"1","bankid":"H1jzBAn8D7NPh8Jl","port":"A","pin":"10","circuits":["jCZqXbM23JHRHK0Y","tPIDKJR1OdByNHlw"],"on":false,"_id":"c6FXqq3MNZgZXc93"}

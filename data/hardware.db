@@ -1,2 +1,5 @@
-{"name":"Relay Bank","type":"mcp17","desc":"16 switUpper left on board","settings":{"i2cAddress":"0x24","defaultConfig":"option","iPinA":"18","iPinB":"10"},"_id":"oBuTy4Jdm9vZD3br"}
-{"name":"Relay Bank","type":"mcp17","desc":"16 switUpper left on board","settings":{"i2cAddress":"0x24","defaultConfig":"custom","iPinA":"18","iPinB":"10"},"_id":"oBuTy4Jdm9vZD3br"}
+{"name":"Relay Bank 1","desc":"Upper Left Cabinet","type":"ry16","settings":{"i2cAddress":"0x24","pinsConfig":"output"},"category":"relay","_id":"6Chqsyctzz1WhBFY"}
+{"name":"Relay Bank 2","desc":"Lower Left Cabinet","type":"ry16","settings":{"i2cAddress":"0x25","pinsConfig":"output"},"category":"relay","_id":"7QYkC91dVUquGz65"}
+{"name":"Switch Bank 2","desc":"Upper left","type":"sw16","settings":{"i2cAddress":"0x28","pinsConfig":"toggle","iPinA":"17","iPinB":"14"},"category":"switch","_id":"H1jzBAn8D7NPh8Jl"}
+{"name":"Relay Bank 3","desc":"upper right cabinet","type":"ry16","settings":{"i2cAddress":"0x26","pinsConfig":"output"},"category":"relay","_id":"Z2nOqQKcJSLUcSaE"}
+{"name":"Switch Bank 1","desc":"enter a description","type":"sw16","settings":{"i2cAddress":"0x27","pinsConfig":"toggle","iPinA":"18","iPinB":"10"},"category":"switch","_id":"iIE5SGIWfZIjU21a"}

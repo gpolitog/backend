@@ -1,5 +1,6 @@
 const NeDB = require('nedb');
 const path = require('path');
+const schemas = require('../schemas/switch.schemas.js');
 
 module.exports = function (app) {
   const dbPath = app.get('nedb');
@@ -7,6 +8,8 @@ module.exports = function (app) {
     filename: path.join(dbPath, 'switches.db'),
     autoload: true
   });
+
+  Model.schemas = schemas;
 
   return Model;
 };

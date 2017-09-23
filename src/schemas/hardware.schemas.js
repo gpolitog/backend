@@ -10,9 +10,9 @@ const deviceTypes = {};
 
 deviceTypes.sw16 = {
   category: 'switch',
-  label: '16 Switch Board',
+  label: '16 Switch Board/Chip',
   desc: 'MCP 20017 Chip on Control Anything DIO board with interrupts',
-  pins: 16,
+  count: 16,
   settings: {
     i2cAddress : { type: Number, required: true, unique: true,
       fieldProps: { label: 'I2C Address', tip: 'enter address as decimal or hex - unique for IC2 bus' } },
@@ -26,9 +26,9 @@ deviceTypes.sw16 = {
 
 deviceTypes.ry16 = {
   category: 'relay',
-  label: '16 Relay Board',
+  label: '16 Relay Board/Chip',
   desc: 'MCP 20017 Chip on Control Anything Relay board ',
-  pins: 16,
+  count: 16,
   settings: {
     i2cAddress : { type: Number, required: true, unique: true,
       fieldProps: { label: 'I2C Address', tip: 'enter address as decimal or hex - unique for IC2 bus' } 

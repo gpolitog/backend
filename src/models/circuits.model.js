@@ -1,11 +1,11 @@
 const NeDB = require('nedb');
 const path = require('path');
-const schemas = require('../schemas/hardware.schemas.js');
+const schemas = require('../schemas/circuit.schemas.js');
 
 module.exports = function (app) {
   const dbPath = app.get('nedb');
   const Model = new NeDB({
-    filename: path.join(dbPath, 'hardware.db'),
+    filename: path.join(dbPath, 'circuits.db'),
     autoload: true
   });
 
