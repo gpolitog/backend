@@ -18,6 +18,14 @@ const virtual = {
 
 const physicalExtras = {
 
+  mode: { default: '1' , fieldType: 'select',
+    fieldProps: { label: 'Switch Mode', tip: 'Select Switch Mode Type',
+      options: [
+        {label: 'Toggle', value: 'toggle'},
+        {label: 'On/Off', value: 'onoff'},
+        {label: 'Momentary', value: 'momentary'},
+      ]}
+  },  
   location: { default: '1' , fieldType: 'select',
     fieldProps: { label: 'Location in Buidling', tip: 'Select building location',
       options: [
@@ -46,7 +54,14 @@ const physicalExtras = {
 const physical = Object.assign({}, virtual)
 Object.assign(physical, physicalExtras)
 
+const view = {
 
-module.exports = { physical, virtual };
+  name: { default: '', unique: true, 
+    fieldProps: { label: 'view name', tip: 'enter unique view name' } 
+  }
+};
+
+
+module.exports = { physical, virtual, view };
 
 
