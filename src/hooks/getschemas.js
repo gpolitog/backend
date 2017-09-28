@@ -4,7 +4,7 @@ module.exports = function () {
     if (hook.id === 'schemas') {
       // setting hook result will send schemas to client
       hook.result = hook.service.Model.schemas;
-    console.log('getting schema', hook.result)
+    // console.log('getting schema', hook.result)
     }
     return hook;
   };
