@@ -23,6 +23,10 @@ const physicalExtras = {
         {label: 'Momentary', value: 'momentary'},
       ]}
   },
+  virtual: { default: true , fieldType: 'checkbox',
+    fieldProps: { label: 'Virtual Switch', tip: 'Create a corresponding virtual switch',
+      }
+  },
   // TODO make this another doc type so users can edit this list - for now disable
   location: { default: '1' , fieldType: 'hidden',
     fieldProps: { label: 'Location in Buidling', tip: 'Select building location',
