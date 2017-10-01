@@ -8,9 +8,6 @@ const virtual = {
   },
   circuits: { default: [], fieldType: 'option-group',
     fieldProps: { label: 'Circuits', tip: 'Select circuits associated with this switch', inline: true, type: 'toggle', options: [] }
-  },
-  views: { default: [],  fieldType: 'option-group',
-    fieldProps: { label: 'Views', tip: 'Choose viewables categories for this switch', type: 'checkbox', options:[] }
   }
 };
 
@@ -18,7 +15,7 @@ const virtual = {
 
 const physicalExtras = {
 
-  mode: { default: '1' , fieldType: 'select',
+  mode: { default: 'toggle' , fieldType: 'select',
     fieldProps: { label: 'Switch Mode', tip: 'Select Switch Mode Type',
       options: [
         {label: 'Toggle', value: 'toggle'},
@@ -26,12 +23,14 @@ const physicalExtras = {
         {label: 'Momentary', value: 'momentary'},
       ]}
   },
-  location: { default: '1' , fieldType: 'select',
+  // TODO make this another doc type so users can edit this list - for now disable
+  location: { default: '1' , fieldType: 'hidden',
     fieldProps: { label: 'Location in Buidling', tip: 'Select building location',
       options: [
         {label: 'First Floor', value: '1'},
         {label: 'Second Floor', value: '2'},
         {label: 'Outside', value: 'outside'}
+
       ]}
   },
   bankid: { default: '', fieldType: 'select',
@@ -54,11 +53,17 @@ const physicalExtras = {
 const physical = Object.assign({}, virtual);
 Object.assign(physical, physicalExtras);
 
+// views only for virtual switches
+virtual.views = { default: [],  fieldType: 'option-group',
+    fieldProps: { label: 'Views', tip: 'Put this switch in checked views', type: 'toggle', options: [] }
+  }
+
 const view = {
 
   name: { default: '', unique: true,
     fieldProps: { label: 'view name', tip: 'enter unique view name' }
   }
+
 };
 
 
