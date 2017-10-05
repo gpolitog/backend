@@ -11,8 +11,6 @@ const virtual = {
   }
 };
 
-
-
 const physicalExtras = {
 
   mode: { default: 'toggle' , fieldType: 'select',
@@ -25,7 +23,7 @@ const physicalExtras = {
   },
   virtual: { default: true , fieldType: 'checkbox',
     fieldProps: { label: 'Virtual Switch', tip: 'Create a corresponding virtual switch',
-      }
+    }
   },
   // TODO make this another doc type so users can edit this list - for now disable
   location: { default: '1' , fieldType: 'hidden',
@@ -59,8 +57,8 @@ Object.assign(physical, physicalExtras);
 
 // views only for virtual switches
 virtual.views = { default: [],  fieldType: 'option-group',
-    fieldProps: { label: 'Views', tip: 'Put this switch in checked views', type: 'toggle', options: [] }
-  }
+  fieldProps: { label: 'Views', tip: 'Put this switch in checked views', type: 'toggle', options: [] }
+};
 
 const view = {
 
