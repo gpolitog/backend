@@ -1,10 +1,6 @@
 //const { authenticate } = require('feathers-authentication').hooks;
-// const  device = require('../../schemas/hardware.schemas.js').Device.hooks;
-// const  test = require('../../hooks/test.js');
 const  getschemas = require('../../hooks/getschemas.js');
 
-
-//const  init = require('../../hooks/init.js');
 // Hardware Specific Hooks
 
 const init = function (options) {
@@ -12,29 +8,22 @@ const init = function (options) {
   return function(hook) {
     // const { method, type, data, service } = hook;
     const { data, service } = hook;
-    const { device, deviceTypes } = service.Model.schemas;
-    console.log('hook\n',device, deviceTypes, options);
+    const schema = service.Model.schemas[data.hardware];
+    // console.log('hook\n',schema, data);
     // validate name unique
     // validate type one of device types
     // initialize description
 
-    for (let key in device) {
-      console.log(key);
-      if (!data[key]) {
-// need to fix making a new non-null instance from type
-        data[key] =  device[key].default ? device[key].default : new device[key].type;
+    for (let field in schema.settings) {
+      // console.log('field, schema', field, schema[field])
+      if (!data[field]) {
+        data[field] = schema.settings[field].default;  // TODO initialize on type instead of default if no default
+        console.log(field, data[field]);
       }
     }
-    data.category =  deviceTypes[data.type].category
-    const settings = deviceTypes[data.type].settings;
-    for (let skey in settings) {
-      console.log(skey);
-      if (!data[skey]) {
-// need to fix making a new non-null instance from type
-        data.settings[skey] =  settings[skey].default ? settings[skey].default : settings[skey].type(0)
-      }
-    }
-    console.log(hook.data);
+    console.log('category',schema.category);
+    data.category = schema.category;
+
     return hook;
   };
 };
