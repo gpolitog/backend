@@ -1,6 +1,6 @@
 // const { authenticate } = require('feathers-authentication').hooks;
 const  getSchemas = require('../../hooks/getschemas.js');
-// const  init = require('../../hooks/init.js');
+const  log = require('../../hooks/logger.js');
 
 const init = function (options) {
   // The hook function itself is returned.
@@ -27,6 +27,7 @@ const init = function (options) {
 module.exports = {
   before: {
     //  all: [ authenticate('jwt') ],
+    all: [ log() ],
     find: [],
     get: [ getSchemas() ],  // TODO: functions not passed must JSON.stringify and parse at the other end.
     create: [ init() ],
