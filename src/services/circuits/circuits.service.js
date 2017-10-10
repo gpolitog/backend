@@ -1,18 +1,18 @@
 // Initializes the `circuits` service on path `/circuits`
 const createService = require('feathers-nedb')
-const createModel = require('../../models/circuits.model')
+const createModel = require('../../helpers/nedb.model')
 const hooks = require('./circuits.hooks')
 const filters = require('./circuits.filters')
 
 module.exports = function () {
   const app = this
-  const Model = createModel(app)
+  const Model = createModel(app, 'circuits')
   const paginate = app.get('paginate')
 
   const options = {
     name: 'circuits',
     Model,
-    events: ['changeRequest', 'changeComplete'],  // custom event
+    events: ['changeRequest', 'changeComplete' ],  // custom event
     paginate
   }
 

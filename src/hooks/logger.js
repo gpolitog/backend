@@ -16,7 +16,7 @@ module.exports = function () {
     logger.debug('hook.params', hook.params)
 
     if (hook.result) {
-      logger.info('hook.result', hook.result)
+      logger.debug('hook.result', hook.result)
     }
 
     if (hook.error) {

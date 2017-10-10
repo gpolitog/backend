@@ -1,16 +1,16 @@
 const  getschemas = require('../../hooks/getschemas.js')
 //const  init = require('../../hooks/init.js');
 
-const init = function (options) {
+const init = function () {
   // The hook function itself is returned.
   return function(hook) {
     // const { method, type, data, service } = hook;
     const { data, service } = hook
     const  schema = service.Model.schemas
-    console.log('hook log\n', data, schema, options)
+    // console.log('hook log\n', data, schema, options)
     // validate name unique
     for (let field in schema) {
-      console.log('field, schema', field, schema[field])
+      // console.log('field, schema', field, schema[field])
       if (!data[field]) {
         data[field] = schema[field].default  // try to initize on type instead of default
         // console.log(field, data[field])
@@ -40,30 +40,6 @@ const change = function () {
   }
 }
 
-// const changeRequest = function () {
-//   return function(hook) {
-//     const { id, data, service } = hook
-//     if ('request' in data){
-//       console.log('circuit change request made\n', id, data)
-//       service.emit('changeRequest', { request: data.request, id: id })
-//     }
-//     hook.result = null // don't write it to db it's just a request
-//     return hook
-//   }
-// }
-//
-// const changeComplete = function () {
-//   return function(hook) {
-//     const { id, data, service } = hook
-//     if ('on' in data){
-//       console.log('new circuit state\n', id, data.on)
-//       service.emit('changeComplete', { on: data.on, id: id })
-//       return hook
-//     }
-//     return hook
-//   }
-// }
-
 module.exports = {
   before: {
     // all: [ authenticate('jwt') ],
@@ -72,7 +48,6 @@ module.exports = {
     create: [ init() ],
     update: [],
     patch: [ change() ],
-    // patch: [ changeComplete(), changeRequest() ],
     remove: []
   },
 
