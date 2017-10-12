@@ -1,5 +1,6 @@
 const  getschemas = require('../../hooks/getschemas.js')
 //const  init = require('../../hooks/init.js');
+// const pDebounce = require('p-debounce')
 
 const init = function () {
   // The hook function itself is returned.
@@ -26,13 +27,13 @@ const change = function () {
   return function(hook) {
     const { id, data, service } = hook
     if ('request' in data){
-      console.log('circuit change request made\n', id, data)
-      service.emit('changeRequest', { request: data.request, id: id })
+      console.log('HOOK request hook - circuit change request made for', id, data)
+      service.emit('changeRequest', { request: data.request, id: id , mode: data.mode}),
       hook.result = null // don't write it to db i
     }
 
     if ('on' in data){
-      console.log('new circuit state\n', id, data.on)
+      console.log('HOOK on/off - new circuit state', id, data)
       service.emit('changeComplete', { on: data.on, id: id })
     }
 
