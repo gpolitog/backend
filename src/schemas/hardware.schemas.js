@@ -8,14 +8,25 @@ const device = {
   hardware: { type: String, required: true, fieldType: 'select',
     fieldProps: { disable: true, label: 'Hardware', tip: 'Must delete device and recreate to change this', options: [] }
   },
+  channel: { type: Number, default: null, fieldType: 'select',
+    fieldProps: { label: 'Channel', tip: 'If using TAC9546A Mux Specify Channel for Device',
+      options: [
+        {label: 'Not in Use', value: null },
+        {label: 'Channel 1', value: 1 },
+        {label: 'Channel 2', value: 2 },
+        {label: 'Channel 3', value: 3 },
+        {label: 'Channel 4', value: 4 },
+      ]
+    }
+  },
   category: { type: String, default: '', fieldType: 'hidden' }
-};
+}
 
 // common settings to all devices
 function addCommon (schema) {
-  const settings = Object.assign({}, device);
-  Object.assign(settings, schema.settings);
-  schema.settings = settings;
+  const settings = Object.assign({}, device)
+  Object.assign(settings, schema.settings)
+  schema.settings = settings
 }
 
 // device info and settings to add to schema
@@ -33,8 +44,8 @@ const sw16 =  {
     iPinB: { type: Number, default: 0,
       fieldProps: { label: 'SBC Pin Port B', tip: 'Pin Number on SBC(RPIi) connected to Port B Interrupt' } }
   }
-};
-addCommon(sw16);
+}
+addCommon(sw16)
 
 const ry16 =  {
   category: 'relay',
@@ -47,7 +58,7 @@ const ry16 =  {
     },
     pinsConfig: { type: String, required: true, default: 'output',  fieldType: 'hidden' }
   }
-};
-addCommon(ry16);
+}
+addCommon(ry16)
 
-module.exports = { sw16,ry16 };
+module.exports = { sw16,ry16 }
