@@ -1,7 +1,9 @@
 {
-  "host": "192.168.0.31",
+  "host": "localhost",
   "port": 3030,
   "public": "../public/",
+  "cert": "/opt/certs/wc.kebler.net.crt",
+  "certkey": "/opt/certs/wc.kebler.net.key",
   "paginate": {
     "default": 100,
     "max": 100
